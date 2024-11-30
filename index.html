@@ -40,16 +40,13 @@
             background-color: #3b5998;
             color: #fff;
             padding: 10px 20px;   
-            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             padding: 10px 20px;
             z-index: 1000;
 
-            height: 15vh; 
-            position: fixed;
-        }
+            height: 15vh; }
         
 
         .header h1 {
@@ -80,9 +77,11 @@
 
         /* الصفحة الرئيسية */
         .hero {
+
             color: #fff;
             text-align: center;
             padding: 100px 20px;
+            margin: 0;
         }
 
         .hero h2 {
@@ -346,7 +345,7 @@
         }
     </style>
 </head>
-<body>
+<body style="margin: 0;">
     <button class="scroll-to-top" onclick="scrollToTop()"><img src="up.png" ></button>
     <!-- الشريط العلوي -->
     <header   class="header">
@@ -368,7 +367,7 @@
     </header>
 
     <!-- الصفحة الرئيسية -->
-<section class="hero">
+<section  style=" background: url(fg.jpg) no-repeat center center/cover;" class="hero">
     <div class="container">
         <h2>رحلة في أعماق التاريخ</h2>
         <b>
