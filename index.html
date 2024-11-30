@@ -6,8 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>متحف النوبة</title>
     <style>
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px; 
+            border: none;
+            background: none;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);}
+        .scroll-to-top img {
+            width: 50px;
+            height: 50px; 
+            transition: transform 0.3s;
+    }
+
         /* أنماط عامة */
-        body {
+        .body{
             margin: 0;
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -25,8 +39,18 @@
         .header {
             background-color: #3b5998;
             color: #fff;
-            padding: 15px 0;
+            padding: 10px 20px;   
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px 20px;
+            z-index: 1000;
+
+            height: 15vh; 
+            position: fixed;
         }
+        
 
         .header h1 {
             margin: 0;
@@ -56,7 +80,6 @@
 
         /* الصفحة الرئيسية */
         .hero {
-
             color: #fff;
             text-align: center;
             padding: 100px 20px;
@@ -64,6 +87,7 @@
 
         .hero h2 {
             font-size: 2.5rem;
+            color: black;
         }
 
         .hero p {
@@ -323,9 +347,9 @@
     </style>
 </head>
 <body>
-
+    <button class="scroll-to-top" onclick="scrollToTop()"><img src="up.png" ></button>
     <!-- الشريط العلوي -->
-    <header  class="header">
+    <header   class="header">
         <div class="container">
             <h1>متحف النوبة</h1>
             <nav>
@@ -344,7 +368,7 @@
     </header>
 
     <!-- الصفحة الرئيسية -->
-<section style="background: url(fg.jpg) no-repeat center center/cover;" class="hero">
+<section class="hero">
     <div class="container">
         <h2>رحلة في أعماق التاريخ</h2>
         <b>
@@ -355,9 +379,6 @@
                 التي كانت مركزًا للحكم والتجارة في العصور القديمة.
             </p>
         </b>
-
-   
-
     </div>
 </section>
 
@@ -666,7 +687,12 @@
 <h2>ahmed elhossin</h2>
 
     <script>
-
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
     function toggleDetails(exhibitId) {
         var details = document.getElementById(exhibitId);
         if (details.style.display === "none") {
